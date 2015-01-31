@@ -1,0 +1,2 @@
+part: 'pq-gcc',      branch: '4.9.1'
+part: 'pq-openssl',  branch: '1.0.2'

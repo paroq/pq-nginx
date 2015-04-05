@@ -22,7 +22,8 @@ pq_nginx_configuration_flags += --prefix=$(part_dir)
 pq_nginx_configuration_flags += --with-pcre=../$(pq_pcre_part_name)
 pq_nginx_configuration_flags += --with-zlib=../$(pq_zlib_part_name)
 pq_nginx_configuration_flags += --with-http_ssl_module
-pq_nginx_configuration_flags += --with-ld-opt="-L$(pq-openssl-dir)/lib"
+pq_nginx_configuration_flags += --with-ld-opt="-L $(pq-openssl-dir)/lib"
+pg_nginx_configuration_flags += --with-ld-opt="-L $(pq-postgresql-dir)/lib"
 pq_nginx_configuration_flags += --add-module=../$(pq_ngx_postgres_name)
 pq_nginx_configuration_flags += --add-module=../$(pq_ngx_coolkit_name)
 pq_nginx_configuration_flags += --add-module=../$(pq_ngx_auth_request_name)

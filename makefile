@@ -18,6 +18,9 @@ pq_ngx_coolkit_file := $(pq_ngx_coolkit_name).tar.gz
 pq_ngx_auth_request_name := ngx_http_auth_request_module-662785733552
 pq_ngx_auth_request_file := $(pq_ngx_auth_request_name).tar.gz
 
+pq_ngx_headers_more_name := headers-more-nginx-module-0.25
+pq_ngx_headers_more_file := $(pq_ngx_headers_more_name).tar.gz
+
 pq_nginx_configuration_flags += --prefix=$(part_dir)
 pq_nginx_configuration_flags += --with-pcre=../$(pq_pcre_part_name)
 pq_nginx_configuration_flags += --with-zlib=../$(pq_zlib_part_name)
@@ -26,6 +29,7 @@ pq_nginx_configuration_flags += --with-ld-opt="-L$(pq-openssl-dir)/lib -L$(pq-po
 pq_nginx_configuration_flags += --add-module=../$(pq_ngx_postgres_name)
 pq_nginx_configuration_flags += --add-module=../$(pq_ngx_coolkit_name)
 pq_nginx_configuration_flags += --add-module=../$(pq_ngx_auth_request_name)
+pq_nginx_configuration_flags += --add-module=../$(pq_ngx_headers_more_name)
 
 
 build-stamp: stage-stamp
@@ -49,4 +53,5 @@ unpack-stamp: $(pq_part_file)
 	tar xf $(source_dir)/$(pq_ngx_postgres_file)
 	tar xf $(source_dir)/$(pq_ngx_coolkit_file)
 	tar xf $(source_dir)/$(pq_ngx_auth_request_file)
+	tar xf $(source_dir)/$(pq_ngx_headers_more_file)
 	touch $@
